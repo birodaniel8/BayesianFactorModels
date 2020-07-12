@@ -33,10 +33,18 @@ volatility components with independent \$\\Gamma\$ priors on the error variances
 Note: We use the "variance" and "volatility" terms in the description, however all the priors and the sampled values are on
 the variance term!
 """
-function sv_model_rw(y, _gamma_prior = 1.5, _delta_prior = mean(y.^2), _gamma_tau_prior = 1.5, _delta_tau_prior = 0.05,
-                     _ndraw=1000, _burnin=500, _h0 = 0, _P0 = 10;
+function sv_model_rw(y, 
+                     _gamma_prior = 1.5, 
+                     _delta_prior = mean(y.^2), 
+                     _gamma_tau_prior = 1.5, 
+                     _delta_tau_prior = 0.05,
+                     _ndraw=1000, 
+                     _burnin=500, 
+                     _h0 = 0, 
+                     _P0 = 10;
                      gamma_prior = _gamma_prior, delta_prior = _delta_prior, gamma_tau_prior = _gamma_tau_prior,
                      delta_tau_prior = _delta_tau_prior, ndraw = _ndraw, burnin = _burnin, h0 = _h0, P0 = _P0)
+                     
     T = size(y, 1)
 
     # Create containers:

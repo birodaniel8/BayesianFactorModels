@@ -36,10 +36,20 @@ where \$i = 1...m\$, \$j = 1...k\$.
 
 Note: the prior mean of the error variance distribution is \$\\frac{\\gamma_{prior} - 1}{\\delta_{prior}}\$ (default = 1).
 """
-function factor_model(y, _k, _beta_prior = 0, _beta_var_prior = 1, _gamma_prior = 1.5, _delta_prior = 0.5;
-                      ndraw = 1500, burnin = 500, sigma_squared0 = Nothing, display = true, display_step = 250,
+function factor_model(y, 
+                      _k, 
+                      _beta_prior = 0, 
+                      _beta_var_prior = 1, 
+                      _gamma_prior = 1.5, 
+                      _delta_prior = 0.5;
+                      ndraw = 1500, 
+                      burnin = 500, 
+                      sigma_squared0 = Nothing, 
+                      display = true, 
+                      display_step = 250,
                       k = _k, beta_prior = _beta_prior, beta_var_prior = _beta_var_prior,
                       gamma_prior = _gamma_prior, delta_prior = _delta_prior)
+                      
     T = size(y, 1)
     m = size(y, 2)
 

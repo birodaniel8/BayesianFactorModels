@@ -28,7 +28,13 @@ where \$e_t^* = log(e_t^2) - log(\\sigma^2) - m_{\\omega}^* + 1.2704\$.
 ## Returns
 - `sampled_h::Vector`: (T) sampled stochastic variance
 """
-function sampling_sv_rw(e, sigma_squared, prev_h, tau_squared, h0=0, P0=1)
+function sampling_sv_rw(e, 
+                        sigma_squared, 
+                        prev_h, 
+                        tau_squared, 
+                        h0=0, 
+                        P0=1)
+                        
     table4 = [[1 0.00730 -10.12999 5.79596];
               [2 0.10556 -3.97281 2.61369];
               [3 0.00002 -8.56686 5.17950];

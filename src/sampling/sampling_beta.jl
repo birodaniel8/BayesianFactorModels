@@ -23,9 +23,17 @@ It takes a sample from \$N(\\beta_{posterior},V_{posterior})\$, where
 ## Returns
 - `sampled_beta::Number::Vector`: () or (k x 1) sampled \$\\beta\$ coefficients
 """
-function sampling_beta(y, x, _beta_prior = 0, _beta_var_prior = 1, _sigma_squared = 0.01;
-                       last_truncated = false, stationarity_check = false, constant_included = false, max_iterations = 10000,
+function sampling_beta(y, 
+                       x, 
+                       _beta_prior = 0, 
+                       _beta_var_prior = 1, 
+                       _sigma_squared = 0.01;
+                       last_truncated = false, 
+                       stationarity_check = false, 
+                       constant_included = false, 
+                       max_iterations = 10000,
                        beta_prior = _beta_prior, beta_var_prior = _beta_var_prior, sigma_squared = _sigma_squared)
+                       
     k = size(x, 2)
     i0 = constant_included ? 2 : 1
     # Transform prior inputs to the right format:

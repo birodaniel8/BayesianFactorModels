@@ -19,8 +19,12 @@ where \$\\eta = \\frac{1}{v_{prior}} + 0.5\\sum_{i=1}^T[ln(\\lambda^{-1}) + \\la
 ## Returns
 - `v_sampled::Vector`: (m) sampled degree of freedoms
 """
-function sampling_df(lambda, _v_previous, _v_prior = 30, _hm_variance = 0.25;
+function sampling_df(lambda, 
+                     _v_previous, 
+                     _v_prior = 30, 
+                     _hm_variance = 0.25;
                      v_previous = _v_previous, v_prior = _v_prior, hm_variance = _hm_variance)
+                     
     t = size(lambda, 1)
     m = size(lambda, 2)
 

@@ -18,7 +18,9 @@ It iterates trough all elements of the error matrix `x` and takes a sample from 
 ## Returns
 - `sampled_lambda::Vector`: (T x m) sampled mixture scale parameter
 """
-function sampling_mixtrue_scale(x, _sigma_squared, _v;
+function sampling_mixtrue_scale(x, 
+                                _sigma_squared, 
+                                _v;
                                 sigma_squared = _sigma_squared, v = _v)
     t = size(x, 1)
     m = size(x, 2)

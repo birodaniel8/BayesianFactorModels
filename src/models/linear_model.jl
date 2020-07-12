@@ -30,10 +30,20 @@ Gibbs sampling returning an `ndraw-burnin` long sample.
 
 Note: the prior mean of the error variance distribution is \$\\frac{\\gamma_{prior} - 1}{\\delta_{prior}}\$ (default = 1).
 """
-function linear_model(y, x, _beta_prior = 0, _beta_var_prior = 1, _gamma_prior = 1.5, _delta_prior = 0.5;
-                      ndraw = 1500, burnin = 500, constant = true, sigma_squared0 = Nothing, display = true,
-                      display_step = 250, beta_prior = _beta_prior, beta_var_prior = _beta_var_prior,
-                      gamma_prior = _gamma_prior, delta_prior = _delta_prior)
+function linear_model(y, 
+                      x, 
+                      _beta_prior = 0, 
+                      _beta_var_prior = 1, 
+                      _gamma_prior = 1.5, 
+                      _delta_prior = 0.5;
+                      ndraw = 1500, 
+                      burnin = 500, 
+                      constant = true, 
+                      sigma_squared0 = Nothing, 
+                      display = true,
+                      display_step = 250, 
+                      beta_prior = _beta_prior, beta_var_prior = _beta_var_prior, gamma_prior = _gamma_prior, delta_prior = _delta_prior)
+                      
     t = size(x, 1)
     k = size(x, 2)
 

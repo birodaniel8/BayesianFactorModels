@@ -19,7 +19,10 @@ It samples the factors by taking independent samples at each time `t` from the d
 
 Note: this approach is equivalent with having independent \$N(0,1)\$ priors on each factor elements.
 """
-function sampling_factor(y, beta, error_covariance)
+function sampling_factor(y, 
+                         beta, 
+                         error_covariance)
+                         
     T = size(y, 1)
     k = size(beta, 2)
 

@@ -5,7 +5,14 @@ Carter & Kohn (1994) sampling algorithm for sampling Kalman Filtered states with
 
 For detailed description see [`sampling_carter_kohn`](@ref).
 """
-function sampling_carter_kohn_tvp(x, P, G, Q, _mu=0, _j=Nothing; mu=_mu, j=_j)
+function sampling_carter_kohn_tvp(x, 
+                                  P, 
+                                  G, 
+                                  Q, 
+                                  _mu=0, 
+                                  _j=Nothing; 
+                                  mu=_mu, j=_j)
+                                  
     j = j == Nothing ? size(Q, 1) : j
     T = size(x,1)
 

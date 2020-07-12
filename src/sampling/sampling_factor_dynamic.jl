@@ -20,7 +20,11 @@ where \$i = 1...m\$, \$j = 1...k\$.
 ## Returns
 - `sampled_factor::Matrix`: (T x k) sampled factor values
 """
-function sampling_factor_dynamic(y, beta, theta, error_covariance, factor_covariance=1)
+function sampling_factor_dynamic(y, 
+                                 beta, 
+                                 theta, 
+                                 error_covariance, 
+                                 factor_covariance=1)
     k = size(beta, 2)
 
     # Set parameters:

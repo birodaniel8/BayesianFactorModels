@@ -29,7 +29,11 @@ and \$N(\\beta_{posterior},V_{posterior})\$ else, where
 Note: all factor loadings are treated as independent random variables and we have independent \$N(\\beta_{i,j},V_{i,j})\$
 priors for each of them.
 """
-function sampling_factor_loading(y, factor, beta_prior, beta_var_prior, error_covariance)
+function sampling_factor_loading(y, 
+                                 factor, 
+                                 beta_prior, 
+                                 beta_var_prior, 
+                                 error_covariance)
     m = size(y, 2)
     k = size(factor, 2)
     # Transform prior inputs to the right format:

@@ -34,10 +34,19 @@ autoregressive process parameters and the error variances via Gibbs sampling ret
 Note: We use the "variance" and "volatility" terms in the description, however all the priors and the sampled values are on
 the variance term!
 """
-function sv_model(y, _rho_prior = 0, _rho_var_prior = 10, _gamma_tau_prior = 1.5, _delta_tau_prior = 0.05, _ndraw=1000,
-                  _burnin=500, _tau0 = _delta_tau_prior/(_gamma_tau_prior-1), _h0 = 0, _P0 = 10;
+function sv_model(y, 
+                  _rho_prior = 0, 
+                  _rho_var_prior = 10, 
+                  _gamma_tau_prior = 1.5, 
+                  _delta_tau_prior = 0.05, 
+                  _ndraw=1000,
+                  _burnin=500, 
+                  _tau0 = _delta_tau_prior/(_gamma_tau_prior-1), 
+                  _h0 = 0, 
+                  _P0 = 10;
                   rho_prior = _rho_prior, rho_var_prior = _rho_var_prior, gamma_tau_prior = _gamma_tau_prior,
                   delta_tau_prior = _delta_tau_prior, ndraw = _ndraw, burnin = _burnin, tau0 = _tau0, h0 = _h0, P0 = _P0)
+                  
     T = size(y, 1)
 
     # Create containers:

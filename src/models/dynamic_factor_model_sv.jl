@@ -1,12 +1,24 @@
 """
     dynamic_factor_model_sv()
 """
-function dynamic_factor_model_sv(y, _k, _beta_prior = 0, _beta_var_prior = 1,
-                                 _rho_prior = 0, _rho_var_prior = 10, _gamma_tau_prior = 1.5, _delta_tau_prior = 0.5,
-                                 _theta_prior = 0, _theta_var_prior = 1,
-                                 _rho_factor_prior = 0, _rho_var_factor_prior = 10,
-                                 _gamma_tau_factor_prior = 1.5, _delta_tau_factor_prior = 0.5;
-                                 ndraw = 1500, burnin = 500, display = true, display_step = 250,
+function dynamic_factor_model_sv(y, 
+                                 _k, 
+                                 _beta_prior = 0, 
+                                 _beta_var_prior = 1,
+                                 _rho_prior = 0, 
+                                 _rho_var_prior = 10, 
+                                 _gamma_tau_prior = 1.5, 
+                                 _delta_tau_prior = 0.5,
+                                 _theta_prior = 0, 
+                                 _theta_var_prior = 1,
+                                 _rho_factor_prior = 0,
+                                 _rho_var_factor_prior = 10,
+                                 _gamma_tau_factor_prior = 1.5,
+                                 _delta_tau_factor_prior = 0.5;
+                                 ndraw = 1500, 
+                                 burnin = 500, 
+                                 display = true, 
+                                 display_step = 250,
                                  k = _k, beta_prior = _beta_prior, beta_var_prior = _beta_var_prior,
                                  rho_prior = _rho_prior, rho_var_prior = _rho_var_prior,
                                  gamma_tau_prior = _gamma_tau_prior, delta_tau_prior = _delta_tau_prior,
@@ -14,6 +26,7 @@ function dynamic_factor_model_sv(y, _k, _beta_prior = 0, _beta_var_prior = 1,
                                  rho_factor_prior = _rho_factor_prior, rho_var_factor_prior = _rho_var_factor_prior,
                                  gamma_tau_factor_prior = _gamma_tau_factor_prior,
                                  delta_tau_factor_prior = _delta_tau_factor_prior)
+                                 
     T = size(y, 1)
     m = size(y, 2)
 

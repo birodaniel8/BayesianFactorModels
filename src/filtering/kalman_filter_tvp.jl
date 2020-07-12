@@ -8,7 +8,16 @@ This function performs the Kalman Filter estimation with time-varying parameters
 
 For detailed description see [`kalman_filter`](@ref).
 """
-function kalman_filter_tvp(z, H, R, G, Q, _mu=0, _x0=0, _P0=1; mu = _mu, x0 = _x0, P0 = _P0)
+function kalman_filter_tvp(z, 
+                           H, 
+                           R, 
+                           G, 
+                           Q, 
+                           _mu=0, 
+                           _x0=0, 
+                           _P0=1; 
+                           mu = _mu, x0 = _x0, P0 = _P0)
+                           
     z = z'
     T = size(z, 2)
     k = size(H, 2)

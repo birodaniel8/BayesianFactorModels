@@ -19,7 +19,9 @@ It iterates trough the columns of the error matrix `x` and takes a sample from \
 
 Note: the prior mean of the distribution is \$\\frac{\\gamma_{prior} - 1}{\\delta_{prior}}\$ (default = 1).
 """
-function sampling_sigma_squared(x, _gamma_prior = 1.5, _delta_prior = 0.5;
+function sampling_sigma_squared(x, 
+                                _gamma_prior = 1.5, 
+                                _delta_prior = 0.5;
                                 gamma_prior = _gamma_prior, delta_prior = _delta_prior)
     t = size(x, 1)
     k = size(x, 2)

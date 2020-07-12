@@ -23,7 +23,14 @@ where
 ## Returns
 - `sampled_x::Matrix`: (T x k) sampled states
 """
-function sampling_carter_kohn(x, P, G, Q, _mu=0, _j=Nothing; mu=_mu, j=_j)
+function sampling_carter_kohn(x, 
+                              P, 
+                              G, 
+                              Q, 
+                              _mu=0, 
+                              _j=Nothing; 
+                              mu=_mu, j=_j)
+
     j = j == Nothing ? size(Q, 1) : j
 
     if size(G, 3) > 1 || size(Q, 3) > 1

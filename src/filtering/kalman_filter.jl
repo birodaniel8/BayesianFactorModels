@@ -37,7 +37,16 @@ The updating step updates the estimates of `x` and `P` with information availabl
 \$\\hat{x}_{t|t} = \\hat{x}_{t|t-1} + K_t(z_t-H_t\\hat{x}_{t|t-1})\$
 \$P_{t|t} = (I - K_t H_t)P_{t|t-1}\$
 """
-function kalman_filter(z, H, R, G, Q, _mu=0, _x0=0, _P0=1; mu = _mu, x0 = _x0, P0 = _P0)
+function kalman_filter(z, 
+                       H, 
+                       R, 
+                       G, 
+                       Q, 
+                       _mu=0, 
+                       _x0=0,
+                       _P0=1;
+                       mu = _mu, x0 = _x0, P0 = _P0)
+
     if size(H, 3) > 1 || size(R, 3) > 1 || size(G, 3) > 1 || size(Q, 3) > 1
         x, P = kalman_filter_tvp(z, H, R, G, Q, mu, x0, P0)
     else
