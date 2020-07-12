@@ -1,7 +1,14 @@
 """
 This function generates a simulated sample from the dynamic linear factor model.
 """
-function dgp_dynamic(beta=Nothing,error_var=Nothing,theta=Nothing; T = 100, m = Nothing, k = Nothing)
+function dgp_dynamic(_beta=Nothing,
+                     _error_var=Nothing,
+                     _theta=Nothing,
+                     _T = 100, 
+                     _m = Nothing, 
+                     _k = Nothing;
+                     beta = _beta, error_var = _error_var, theta = _theta, T = _T, m = _m, k = _k)
+
     if beta == Nothing
         beta = [1 0 0;
                 0.45 1 0;

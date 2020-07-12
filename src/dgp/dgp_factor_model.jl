@@ -1,7 +1,13 @@
 """
 This function generates a simulated sample from the normal linear factor model.
 """
-function dgp_normal(beta=Nothing,error_var=Nothing; T = 100, m = Nothing, k = Nothing)
+function dgp_normal(_beta=Nothing,
+                    _error_var=Nothing,
+                    _T = 100, 
+                    _m = Nothing, 
+                    _k = Nothing;
+                    beta = _beta, error_var = _error_var, T = _T, m = _m, k = _k)
+                    
     if beta == Nothing
         beta = [1 0 0;
                 0.45 1 0;
