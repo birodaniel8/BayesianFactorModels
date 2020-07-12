@@ -1,3 +1,2 @@
-# ignore everything from the test folder:
-src/test/*
-test/*
+# ignore everything from the local test folder:
+test_local/*
