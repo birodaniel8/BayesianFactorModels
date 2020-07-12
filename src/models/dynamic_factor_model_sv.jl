@@ -1,10 +1,3 @@
-using LinearAlgebra
-using StatsBase
-include(joinpath(pwd(), "sampling\\sampling_factor_loading.jl"))
-include(joinpath(pwd(), "sampling\\sampling_sigma_squared.jl"))
-include(joinpath(pwd(), "sampling\\sampling_factor_dynamic.jl"))
-include(joinpath(pwd(), "sampling\\sampling_sv.jl"))
-
 """
     dynamic_factor_model_sv()
 """

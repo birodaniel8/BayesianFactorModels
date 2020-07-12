@@ -1,9 +1,3 @@
-using LinearAlgebra
-using StatsBase
-include(joinpath(pwd(), "sampling\\sampling_beta.jl"))
-include(joinpath(pwd(), "sampling\\sampling_sigma_squared.jl"))
-include(joinpath(pwd(), "sampling\\sampling_sv_rw.jl"))
-
 """
     sv_model_rw(y, gamma_prior = 1.5, delta_prior = mean(y.^2), gamma_tau_prior = 1.5, delta_tau_prior = 0.05, ndraw=1000, burnin=500, h0 = 0, P0 = 10)
 

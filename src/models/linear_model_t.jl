@@ -1,8 +1,3 @@
-include(joinpath(pwd(), "sampling\\sampling_beta.jl"))
-include(joinpath(pwd(), "sampling\\sampling_sigma_squared.jl"))
-include(joinpath(pwd(), "sampling\\sampling_df.jl"))
-include(joinpath(pwd(), "sampling\\sampling_mixture_scale.jl"))
-
 """
     linear_model_t(y, x, beta_prior = 0, beta_var_prior = 1, gamma_prior = 1.5, delta_prior = 0.5 v_prior = 30; ndraw = 1500, burnin = 500, constant = true, sigma_squared0 = Nothing, df0 = Nothing, mh_variance = 0.25, display = true, display_step = 250)
 
@@ -45,7 +40,8 @@ Note: the prior mean of the error variance distribution is \$\\frac{\\gamma_{pri
 function linear_model_t(y, x, _beta_prior = 0, _beta_var_prior = 1, _gamma_prior = 1.5, _delta_prior = 0.5, _v_prior = 30;
                         ndraw = 1500, burnin = 500, constant = true, sigma_squared0 = Nothing, df0 = Nothing,
                         hm_variance = 0.25, display = true, display_step = 250, beta_prior = _beta_prior,
-                        beta_var_prior = _beta_var_prior, gamma_prior = _gamma_prior, delta_prior = _delta_prior)
+                        beta_var_prior = _beta_var_prior, gamma_prior = _gamma_prior, delta_prior = _delta_prior,
+                        v_prior = _v_prior)
     t = size(x, 1)
     k = size(x, 2)
 

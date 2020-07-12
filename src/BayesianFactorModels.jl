@@ -1,6 +1,6 @@
 module BayesianFactorModels
 
-using LinearAlgebra, MAT, LinearAlgebra, Distributions, Polynomials, SpecialFunctions
+using LinearAlgebra, MAT, LinearAlgebra, Distributions, Polynomials, SpecialFunctions, StatsBase
 
 greet() = print("BayesianFactorModels Julia package")
 
@@ -28,8 +28,8 @@ include("sampling/sampling_carter_kohn.jl")
 include("sampling/sampling_carter_kohn_tvp.jl")
 include("sampling/sampling_df.jl")
 include("sampling/sampling_factor.jl")
-include("sampling/sampling_factor_dynamic.jl")
 include("sampling/sampling_factor_loading.jl")
+include("sampling/sampling_factor_dynamic.jl")
 include("sampling/sampling_factor_sv.jl")
 include("sampling/sampling_mixture_scale.jl")
 include("sampling/sampling_sigma_squared.jl")

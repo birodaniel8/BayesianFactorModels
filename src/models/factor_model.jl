@@ -1,9 +1,3 @@
-using LinearAlgebra
-using StatsBase
-include(joinpath(pwd(), "sampling\\sampling_factor_loading.jl"))
-include(joinpath(pwd(), "sampling\\sampling_sigma_squared.jl"))
-include(joinpath(pwd(), "sampling\\sampling_factor.jl"))
-
 """
     factor_model(y, k, beta_prior = 0, beta_var_prior = 1, gamma_prior = 1.5, delta_prior = 0.5; ndraw = 1500, burnin = 500, constant = true, sigma_squared0 = Nothing, display = true, display_step = 250)
 
