@@ -1,2 +1,3 @@
 # ignore everything from the test folder:
 src/test/*
+test/*
